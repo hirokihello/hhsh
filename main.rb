@@ -4,7 +4,7 @@ BUILTIN_STR_HASH =  {
   "ls" => :hhsh_ls
 }.freeze
 
-def hhsh_cd(dir)
+def hhsh_cd(dir: "./")
   Dir.chdir(dir)
 
   true
