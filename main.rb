@@ -16,8 +16,6 @@ def hhsh_pwd
   true
 end
 
-# ディレクトリの指定ができるのみ
-# オプションつけるとエラー出る
 def hhsh_ls(*args)
   options = *args
 
@@ -82,5 +80,4 @@ def hhsh_loop
 end
 
 hhsh_loop()
-
 exit()
