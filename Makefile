@@ -1,3 +1,3 @@
 .PHONY: run
 run:
-	ruby main.rb
+	ruby ./src/main.rb

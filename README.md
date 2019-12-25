@@ -5,4 +5,9 @@ usage
 $ make run
 ```
 
-hhsh can only execute cd, ls, pwd commands.(2019/12/25)
+hhsh can 
+
+* execute cd, ls, pwd shell commands.
+* file execution.
+
+(2019/12/25)
