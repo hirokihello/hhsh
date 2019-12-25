@@ -1,10 +1,12 @@
+require "readline"
+
 BUILTIN_STR_HASH =  {
   "cd" => :hhsh_cd,
   "pwd" => :hhsh_pwd,
   "ls" => :hhsh_ls
 }.freeze
 
-def hhsh_cd(dir: "./")
+def hhsh_cd(dir="./")
   Dir.chdir(dir)
 
   true
@@ -65,14 +67,13 @@ def hhsh_split_line(line)
 end
 
 def hhsh_read_line
-  gets.chomp
+  Readline.readline("hhsh > #{Dir.pwd} >> ", true)
 end
 
 def hhsh_loop
   status = true
 
   while status do
-    print "hhsh > #{Dir.pwd} >> "
     line = hhsh_read_line();
     args = hhsh_split_line(line);
     status = hhsh_execute(args);
