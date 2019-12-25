@@ -30,6 +30,22 @@ def hhsh_ls(*args)
   true
 end
 
+def hhsh_launch(cmd)
+  command = cmd.join(" ")
+  child_pid = fork do
+    begin
+      exec(command)
+    rescue Errno::ENOENT
+      puts "unknown hommand for h2bh"
+    end
+
+    exit(true)
+  end
+  Process.waitpid(child_pid)
+
+  true
+end
+
 def hhsh_execute(args)
   return true if args.empty?
 
@@ -39,7 +55,7 @@ def hhsh_execute(args)
   return false if cmd == "exit"
   cmd_args = args.drop(1)
 
-  return true unless BUILTIN_STR_HASH[cmd]
+  return hhsh_launch(args) unless BUILTIN_STR_HASH[cmd]
 
   method(BUILTIN_STR_HASH[cmd]).call(*cmd_args)
 end
