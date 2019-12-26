@@ -2,13 +2,20 @@
 
 ruby製のshellです。
 
-usage
+#### usage
+
+hhshの実行ファイルにpathを通します。
 ```
-$ 
-$ make run
+fish
+$ set pwd (pwd)
+$ set -x PATH/bin pwd $PATH
+
+bash
+$ pwd=$(pwd)
+$ export PATH="$pwd/bin:$PATH"
 ```
 
-hhsh can 
+#### hhsh can
 
 * execute cd, ls, pwd shell commands.
 * file execution.
