@@ -1,11 +1,11 @@
 require "readline"
+require 'func/command'
 
 BUILTIN_STR_HASH =  {
   "cd" => :hhsh_cd,
   "pwd" => :hhsh_pwd,
   "ls" => :hhsh_ls
 }.freeze
-require 'func/command'
 
 module Hhsh
   module Loop
