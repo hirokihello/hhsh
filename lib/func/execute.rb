@@ -1,9 +1,9 @@
 require 'func/command'
 
 BUILTIN_STR_HASH =  {
-  "cd" => :hhsh_cd,
+  # "cd" => :hhsh_cd,
   "pwd" => :hhsh_pwd,
-  "ls" => :hhsh_ls
+  # "ls" => :hhsh_ls
 }.freeze
 
 module Hhsh
@@ -12,14 +12,13 @@ module Hhsh
 
     def hhsh_execute(args)
       return true if args.empty?
-
       idx = 0
       cmd = args[0]
 
       return false if cmd == "exit"
       cmd_args = args.drop(1)
 
-      return hhsh_launch_interpret(args) unless BUILTIN_STR_HASH[cmd]
+      return launch_interpreter(args) unless BUILTIN_STR_HASH[cmd]
 
       method(BUILTIN_STR_HASH[cmd]).call(*cmd_args)
     end
@@ -32,7 +31,6 @@ module Hhsh
         rescue Errno::ENOENT
           puts "unknown hommand for hhsh"
         end
-
         exit(true)
       end
       Process.waitpid(child_pid)
