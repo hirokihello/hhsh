@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 module Hhsh
   module Command
-    def hhsh_cd(dir="~")
+    def hhsh_cd(dir = '~')
       Dir.chdir(dir)
 
       true

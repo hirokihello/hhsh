@@ -1,4 +1,6 @@
-require "readline"
+# frozen_string_literal: true
+
+require 'readline'
 
 module Hhsh
   module ReadlineFunc

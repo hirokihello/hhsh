@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'func/command'
 
-BUILTIN_STR_HASH =  {
+BUILTIN_STR_HASH = {
   # "cd" => :hhsh_cd,
-  "pwd" => :hhsh_pwd,
+  'pwd' => :hhsh_pwd
   # "ls" => :hhsh_ls
 }.freeze
 
@@ -12,10 +14,12 @@ module Hhsh
 
     def hhsh_execute(args)
       return true if args.empty?
+
       idx = 0
       cmd = args[0]
 
-      return false if cmd == "exit"
+      return false if cmd == 'exit'
+
       cmd_args = args.drop(1)
 
       return launch_interpreter(args) unless BUILTIN_STR_HASH[cmd]
@@ -26,12 +30,12 @@ module Hhsh
     end
 
     def launch_interpreter(cmd)
-      command = cmd.join(" ")
+      command = cmd.join(' ')
       child_pid = fork do
         begin
           exec(command)
         rescue Errno::ENOENT
-          puts "unknown hommand for hhsh"
+          puts 'unknown hommand for hhsh'
         end
         exit(true)
       end
