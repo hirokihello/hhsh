@@ -14,8 +14,8 @@ module Hhsh
 
       while status
         line = hhsh_read_line
-        args = hhsh_split_line(line)
-        status = hhsh_execute(args)
+        cmds = hhsh_split_line(line)
+        status = hhsh_execute(cmds)
       end
     end
   end

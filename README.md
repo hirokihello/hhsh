@@ -8,7 +8,7 @@ hhshの実行ファイルにpathを通します。
 ```
 fish
 $ set pwd (pwd)
-$ set -x PATH/bin pwd $PATH
+$ set -x PATH $PWD/bin $PATH
 
 bash
 $ pwd=$(pwd)
