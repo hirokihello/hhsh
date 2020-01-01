@@ -9,6 +9,7 @@ executors:
 commands:
   lint_check:
     steps:
+      - checkout
       - run:
           name: lint_check
           command: |
@@ -19,7 +20,6 @@ jobs:
   check:
     executor: my-executor
     steps:
-      - checkout
       - lint_check
 
 
