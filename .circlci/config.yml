@@ -21,3 +21,14 @@ jobs:
     steps:
       - checkout
       - lint_check
+
+
+workflows:
+  version: 2
+  check:
+    jobs:
+      - check:
+          filters:
+            branches:
+              only:
+                - master
