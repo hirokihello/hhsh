@@ -28,7 +28,7 @@ workflows:
   check:
     jobs:
       - check:
-          filters:
-            branches:
-              only:
-                - master
+          # filters:
+          #   branches:
+          #     only:
+          #       - master
