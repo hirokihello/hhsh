@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'func/readline'
-require 'func/execute'
-require 'func/split_line'
+require "func/readline"
+require "func/execute"
+require "func/split_line"
 
 module Hhsh
   module Loop
