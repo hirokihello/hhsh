@@ -18,9 +18,10 @@ $ export PATH="$pwd/bin:$PATH"
 #### hhsh can
 
 * execute cd, ls, pwd shell commands.
+* pipe func
 * file execution.
 
-(2019/12/25)
+(2019/1/1)
 
 #### 現在実装中の機能
 * 履歴の部分で、スペースを入れないようにする
@@ -28,6 +29,7 @@ $ export PATH="$pwd/bin:$PATH"
 * オプションを受け取れるようにする
 * バッククオートで改行できない
 * 実装コマンドの管理をどこかに移す
+* リダイレクトの実装
 
 
 # 実装について
