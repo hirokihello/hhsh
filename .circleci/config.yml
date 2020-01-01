@@ -18,6 +18,7 @@ commands:
 
 jobs:
   check:
+    executor: default
     steps:
       - lint_check
 
