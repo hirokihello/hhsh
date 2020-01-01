@@ -10,10 +10,10 @@ commands:
   lint_check:
     steps:
       - run:
-        name: lint_check
-        command: |
-          bundle install
-          bundle exec rubocop
+          name: lint_check
+          command: |
+            bundle install
+            bundle exec rubocop
 
 jobs:
   check:
