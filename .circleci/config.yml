@@ -1,7 +1,7 @@
 version: 2.1
 
 executors:
-  my-executor:
+  default:
     working_directory: ~/hhsh
     docker:
       - image: ruby:2.6
@@ -18,15 +18,13 @@ commands:
 
 jobs:
   check:
-    executor: my-executor
     steps:
       - lint_check
 
 workflows:
-  version: 2
-  lint_check:
+  check:
     jobs:
-      - check:
+      - check
           # filters:
           #   branches:
           #     only:
