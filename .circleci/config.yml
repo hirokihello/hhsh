@@ -1,0 +1,33 @@
+version: 2.1
+
+executors:
+  default:
+    working_directory: ~/hhsh
+    docker:
+      - image: ruby:2.6
+
+commands:
+  lint_check:
+    steps:
+      - checkout
+      - run:
+          name: lint check
+          command: |
+            gem install bundler
+            bundle install
+            bundle exec rubocop
+
+jobs:
+  check:
+    executor: default
+    steps:
+      - lint_check
+
+workflows:
+  check:
+    jobs:
+      - check
+          # filters:
+          #   branches:
+          #     only:
+          #       - master
