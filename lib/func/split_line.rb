@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'strscan'
 
 module Hhsh
@@ -7,7 +8,7 @@ module Hhsh
       s = ::StringScanner.new(line)
       cmds = []
 
-      while !s.eos?
+      until s.eos?
         # 先頭の空白の削除
         s.scan(/ */)
         # コマンド部分の削除
