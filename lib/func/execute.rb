@@ -79,7 +79,7 @@ module Hhsh
     def execute_builtin_command(command, cmd_args, pipes = {})
       connect_pipes(pipes)
 
-      method(BUILTIN_STR_HASH[command]).call(*cmd_args)
+      method(command).call(*cmd_args)
       true
     end
 
