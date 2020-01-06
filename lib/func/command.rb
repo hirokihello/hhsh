@@ -3,7 +3,12 @@
 # 実際のコマンドを書いていくためのモジュール
 module Hhsh
   module Command
-    def hhsh_cd(dir = "~")
+    def hhsh_cd(dir = "./")
+      if dir == "~"
+        Dir.chdir(Dir.home)
+        return true
+      end
+
       Dir.chdir(dir)
 
       true
